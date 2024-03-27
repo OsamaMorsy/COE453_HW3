@@ -1,0 +1,12 @@
+const functions = require('@google-cloud/functions-framework');
+
+functions.http('sub', (req, res) => {
+  const num1 = parseFloat(req.query.num1);
+  const num2 = parseFloat(req.query.num2);
+  if (isNaN(num1) || isNaN(num2)) {
+    res.status(400).send('Invalid numbers');
+  } else {
+    const difference = num1 - num2;
+    res.send(`The difference between ${num1} and ${num2} is ${difference}`);
+  }
+});
