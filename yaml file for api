@@ -12,82 +12,118 @@ schemes:
 
 paths:
   /add:
-    get:
+    post:
       operationId: getAdd
-      summary: Open an existing GET running Cloud Function.
+      summary: does add
+      consumes:
+        - application/json
       produces:
         - application/json
       parameters:
-        - name: num1
-          in: query
+        - in: body
+          name: body
           required: true
-          type: integer
-        - name: num2
-          in: query
-          required: true
-          type: integer
+          schema:
+            type: object
+            properties:
+              num1:
+                type: integer
+              num2:
+                type: integer
       responses:
         200:
           description: OK
+          schema:
+            type: object
+            properties:
+              result:
+                type: integer
       x-google-backend:
         address: https://us-central1-coe-453-hw2-415300.cloudfunctions.net/add
   /sub:
-    get:
+    post:
       operationId: getSub
-      summary: Open an existing GET running Cloud Function.
+      summary: does sub
+      consumes:
+        - application/json
       produces:
         - application/json
       parameters:
-        - name: num1
-          in: query
+        - in: body
+          name: body
           required: true
-          type: integer
-        - name: num2
-          in: query
-          required: true
-          type: integer
+          schema:
+            type: object
+            properties:
+              num1:
+                type: integer
+              num2:
+                type: integer
       responses:
         200:
           description: OK
+          schema:
+            type: object
+            properties:
+              result:
+                type: integer
       x-google-backend:
         address: https://us-central1-coe-453-hw2-415300.cloudfunctions.net/sub
   /mult:
-    get:
+    post:
       operationId: getMult
-      summary: Open an existing GET running Cloud Function.
+      summary: does mult
+      consumes:
+        - application/json
       produces:
         - application/json
       parameters:
-        - name: num1
-          in: query
+        - in: body
+          name: body
           required: true
-          type: integer
-        - name: num2
-          in: query
-          required: true
-          type: integer
+          schema:
+            type: object
+            properties:
+              num1:
+                type: integer
+              num2:
+                type: integer
       responses:
         200:
           description: OK
+          schema:
+            type: object
+            properties:
+              result:
+                type: integer
       x-google-backend:
         address: https://us-central1-coe-453-hw2-415300.cloudfunctions.net/mult
   /div:
-    get:
+    post:
       operationId: getDiv
-      summary: Open an existing GET running Cloud Function.
+      summary: does div
+      consumes:
+        - application/json
       produces:
         - application/json
       parameters:
-        - name: num1
-          in: query
+        - in: body
+          name: body
           required: true
-          type: integer
-        - name: num2
-          in: query
-          required: true
-          type: integer
+          schema:
+            type: object
+            properties:
+              num1:
+                type: integer
+              num2:
+                type: integer
       responses:
         200:
           description: OK
+          schema:
+            type: object
+            properties:
+              result:
+                type: integer
       x-google-backend:
         address: https://us-central1-coe-453-hw2-415300.cloudfunctions.net/div
