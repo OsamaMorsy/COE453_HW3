@@ -1,0 +1,93 @@
+swagger: "2.0"
+info:
+  title: mySampleAPI
+  description: API Walk through.
+  version: 1.0.0
+
+host: myapi.apigateway.coe-453-hw2-415300.cloud.goog
+basePath: /
+schemes:
+  - https
+  - http
+
+paths:
+  /add:
+    get:
+      operationId: getAdd
+      summary: Open an existing GET running Cloud Function.
+      produces:
+        - application/json
+      parameters:
+        - name: num1
+          in: query
+          required: true
+          type: integer
+        - name: num2
+          in: query
+          required: true
+          type: integer
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://us-central1-coe-453-hw2-415300.cloudfunctions.net/add
+  /sub:
+    get:
+      operationId: getSub
+      summary: Open an existing GET running Cloud Function.
+      produces:
+        - application/json
+      parameters:
+        - name: num1
+          in: query
+          required: true
+          type: integer
+        - name: num2
+          in: query
+          required: true
+          type: integer
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://us-central1-coe-453-hw2-415300.cloudfunctions.net/sub
+  /mult:
+    get:
+      operationId: getMult
+      summary: Open an existing GET running Cloud Function.
+      produces:
+        - application/json
+      parameters:
+        - name: num1
+          in: query
+          required: true
+          type: integer
+        - name: num2
+          in: query
+          required: true
+          type: integer
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://us-central1-coe-453-hw2-415300.cloudfunctions.net/mult
+  /div:
+    get:
+      operationId: getDiv
+      summary: Open an existing GET running Cloud Function.
+      produces:
+        - application/json
+      parameters:
+        - name: num1
+          in: query
+          required: true
+          type: integer
+        - name: num2
+          in: query
+          required: true
+          type: integer
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://us-central1-coe-453-hw2-415300.cloudfunctions.net/div
