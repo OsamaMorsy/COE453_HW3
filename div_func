@@ -1,14 +1,14 @@
 const functions = require('@google-cloud/functions-framework');
 
 functions.http('div', (req, res) => {
-  const num1 = parseFloat(req.query.num1);
-  const num2 = parseFloat(req.query.num2);
+  const num1 = parseFloat(req.body.num1);
+  const num2 = parseFloat(req.body.num2);
   if (isNaN(num1) || isNaN(num2)) {
-    res.status(400).send('Invalid numbers');
+    res.status(400).json({ error: 'Invalid numbers'});
   } else if (num2 === 0) {
-    res.status(400).send('Cannot divide by zero');
+    res.status(400).json({ error: 'Cannot divide by zero'});
   } else {
     const quotient = num1 / num2;
-    res.send(`The division of ${num1} by ${num2} is ${quotient}`);
+    res.status(200).json({ X: num1, Y: num2, Result: sum });
   }
 });
